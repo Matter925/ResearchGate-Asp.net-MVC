@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ResearchGate.Models.Participators>
+
+
+<table class="table">
+    
+@foreach (var item in Model) {
+      
+     @*@Html.DisplayFor(modelItem => item.Name)*@ 
+     @Html.ActionLink("-"+ Html.DisplayFor(modelItem => item.Name), "ParticipatorsPosts", new { id = item.userId })  
+    
+}
+
+</table>

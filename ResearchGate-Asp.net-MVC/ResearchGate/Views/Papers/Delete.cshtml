@@ -1,0 +1,55 @@
+﻿@model ResearchGate.Models.Papers
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="alert alert-success" style="font-weight: bold; background-color: rgb(148, 197, 197)">Delete Research</h2>
+
+<div class="alert alert-info" style="font-weight: bold; background-color: rgb(233, 239, 239);height:360px">
+    @*<h2 class="" style="background-color: rgb(191, 199, 199); font-weight: bold"></h2>*@
+    <div style="width: 170px;height: 50px;background-color: rgb(204, 218, 218);border-radius:10px;">
+        <h4  style="font-weight: bold; text-align: center; padding-top: 15px">Research Details</h4>
+    </div>
+    @*<script src="~/Scripts/ckeditor/ckeditor.js"></script>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Author)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Author)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResaerchPost)
+        </dt>
+
+        <dd>
+            @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(model => model.ResaerchPost).ToString()))
+            @*@Html.DisplayFor(model => model.ResaerchPost)*@
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-actions alert alert-success" style="font-weight: bold; background-color: rgb(175, 206, 206); border-radius: 15px;">
+    
+    @Html.ActionLink("Back to List", "MyPosts", "Manage") |
+    <input type="submit" value="Delete" class="btn btn-primary" />
+</div>
+    }
+</div>

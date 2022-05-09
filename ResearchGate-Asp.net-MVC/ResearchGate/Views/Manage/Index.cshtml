@@ -1,0 +1,54 @@
+﻿@model ResearchGate.Models.IndexViewModel
+
+
+@{
+    ViewBag.Title = "Manage your account settings";
+}
+
+
+<div style="width:400px;height: 50px;background-color: rgb(186, 209, 209);border-radius:15px;margin-bottom:10px">
+    <h4 style="font-weight: bold; text-align: center; padding-top: 15px">@ViewBag.Title.</h4>
+</div>
+<p class="text-info">@ViewBag.StatusMessage</p>
+
+
+<div class="shadow-sm" style="width: 100%;height: 575px;background-color: rgba(245, 245, 245, 0.781);padding-top: 50px;">
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-success" style="width: 20%; height: 500px; font-weight: bold; background-color: rgb(185, 208, 208);margin-left:-130px">
+                @Html.ActionLink("Edit Profile ", "EditProfile", "Account", new { area = "" }, new { @class = "btn btn-info btn-block" })
+                <hr />
+                <dl class="">
+                    <dd>
+
+                        @if (Model.HasPassword)
+                        {
+                            @Html.ActionLink("Change your password", "ChangePassword", new { area = "" }, new { @class = "btn btn-success btn-block" })
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Create", "SetPassword", new { area = "" }, new { @class = "btn btn-success btn-block" })
+                        }
+
+                    </dd>
+                </dl>
+                <hr />
+                @Html.ActionLink("Add New Research ", "Index", "Papers", new { area = "" }, new { @class = "btn btn-primary btn-block" })
+
+                <hr />
+
+                @Html.ActionLink("My Researches", "MyPosts", "Manage", new { area = "" }, new { @class = "btn btn-primary btn-block" })
+
+
+            </div>
+            <div class="col-md-4" style="margin-left:350px">
+                <img src="~/frontend/imgs/man.png" width="370px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="alert alert-success" style="font-weight: bold; background-color: rgb(170, 209, 209)">
+@Html.ActionLink("Back to List ", "Index", "Home")
+</div>

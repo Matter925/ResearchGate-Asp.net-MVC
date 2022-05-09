@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ResearchGate.Models.Papers>
+
+@{
+    ViewBag.Title = "Author's Research";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="width:210px;height: 50px;background-color: rgb(170, 182, 182);border-radius:10px;margin-bottom:10px">
+    <h4 style="font-weight: bold; text-align: center; padding-top: 15px">@ViewBag.Title.</h4>
+</div>
+
+<table class="table table-hover alert alert-success" style="background-color: rgb(221, 231, 231); height: 300px">
+    <tr>
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.ResaerchPost)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)<br />
+                @Html.DisplayFor(modelItem => item.Post_Date)<br>
+                @Html.DisplayFor(modelItem => item.Title)<br />
+                @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => item.ResaerchPost).ToString())) at <br>
+                @Html.DisplayFor(modelItem => item.Post_like) likes &ensp;@Html.DisplayFor(modelItem => item.Post_Dislike) Dislikes &ensp;
+                @Html.ActionLink("Update", "Edit", new { id = item.ID }, new { @class = "btn btn-success " })&ensp;
+                @Html.Action("Participators", new { id = item.ID })
+                <hr />
+                @Html.ActionLink("Like", "Like", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp; @Html.ActionLink("DisLike", "DisLike", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp;
+                @Html.ActionLink("PostComment", "Create", "Comments", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp;
+                <hr />
+                @Html.Action("ParComments", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<hr />
+
+<p class="alert alert-success" style="font-weight: bold; background-color: rgb(170, 209, 209)">
+    @Html.ActionLink("Back to List", "Index")
+</p>

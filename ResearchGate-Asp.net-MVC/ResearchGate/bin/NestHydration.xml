@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NestHydration</name>
+    </assembly>
+    <members>
+        <member name="T:NestHydration.Definition">
+            <summary>
+            Definition for how to structure the data
+            </summary>
+        </member>
+        <member name="M:NestHydration.Definition.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:NestHydration.Definition.Properties">
+            <summary>
+            List of Properties <see cref="T:NestHydration.IProperty"/>
+            </summary>
+        </member>
+        <member name="T:NestHydration.Hydrator">
+            <summary>
+            The Hydrator - converts tabular data to nested objects/arrays based on a definition object
+            </summary>
+        </member>
+        <member name="T:NestHydration.IProperty">
+            <summary>
+            Property Interface
+            </summary>
+        </member>
+        <member name="P:NestHydration.IProperty.Name">
+            <summary>
+            Name of the Property
+            </summary>
+        </member>
+        <member name="T:NestHydration.Properties">
+            <summary>
+            List of Properties
+            </summary>
+        </member>
+        <member name="M:NestHydration.Properties.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:NestHydration.Property">
+            <summary>
+            A single Property
+            </summary>
+        </member>
+        <member name="P:NestHydration.Property.Name">
+            <summary>
+            Name of the Property
+            </summary>
+        </member>
+        <member name="P:NestHydration.Property.Column">
+            <summary>
+            Name of the Column
+            </summary>
+        </member>
+        <member name="P:NestHydration.Property.IsId">
+            <summary>
+            Boolean which highlights that the current Property
+            is an Id - the Id is used to identify one-to-many
+            </summary>
+        </member>
+        <member name="T:NestHydration.PropertyArray">
+            <summary>
+            A Property Array - this is basically the same as a Property Object, but the type
+            infers that its a list of Objects.
+            </summary>
+        </member>
+        <member name="P:NestHydration.PropertyArray.Name">
+            <summary>
+            Name of the Property
+            </summary>
+        </member>
+        <member name="P:NestHydration.PropertyArray.Properties">
+            <summary>
+            List of Properties <see cref="T:NestHydration.IProperty"/>
+            </summary>
+        </member>
+        <member name="T:NestHydration.PropertyObject">
+            <summary>
+            A Property Object
+            </summary>
+        </member>
+        <member name="P:NestHydration.PropertyObject.Name">
+            <summary>
+            Name of the Property
+            </summary>
+        </member>
+        <member name="P:NestHydration.PropertyObject.Properties">
+            <summary>
+            List of Properties <see cref="T:NestHydration.IProperty"/>
+            </summary>
+        </member>
+    </members>
+</doc>

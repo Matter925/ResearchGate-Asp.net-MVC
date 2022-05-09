@@ -1,0 +1,75 @@
+﻿@model ResearchGate.Models.ApplicationUser
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="width:300px;height: 50px;background-color: rgb(192, 215, 215);border-radius:10px;margin-bottom:10px">
+    <h4 style="font-weight: bold; text-align: center; padding-top: 15px">Author Details</h4>
+</div>
+
+<div class="alert alert-info" style="font-weight: bold; background-color: rgb(230, 238, 238);height:320px">
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfileImage)
+        </dt>
+
+        <dd class="media p-3">
+            <img src="~/Content/Uploads/@Html.DisplayFor(model=>model.ProfileImage)"
+                 class="mr-3 mt-3 rounded-circle"
+                 style="width:80px; height:80px;border-radius: 70px;" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.University)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University)
+        </dd>
+
+
+    </dl>
+</div>
+<p class="alert alert-success" style="font-weight: bold; background-color: rgb(170, 209, 209)">
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.I }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

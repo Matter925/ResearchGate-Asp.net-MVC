@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ResearchGate.Models.Papers>
+
+@{
+    ViewBag.Title = "MyPosts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style="width:300px;height: 50px;background-color: rgb(176, 214, 214);border-radius:10px;margin-bottom:10px">
+    <h4 style="font-weight: bold; text-align: center; padding-top: 15px">Researches Settings</h4>
+</div>
+<p>
+    @Html.ActionLink("Create New", "Create", "Papers", new {area=""},new {@class = "btn btn-success" } )
+</p>
+<div style="background-color: rgb(157, 201, 201); height: 100% ">
+    <table class="table table-hover alert alert-success table-striped" >
+        <tr>
+        
+            @*<th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.ResaerchPost)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)<br />
+                    @Html.DisplayFor(modelItem => item.Post_Date)<br>
+                    @Html.DisplayFor(modelItem => item.Title)<br />
+                    @Html.Raw(HttpUtility.HtmlDecode(Html.DisplayFor(modelItem => item.ResaerchPost).ToString()))  <br>
+                    @Html.DisplayFor(modelItem => item.Post_like) likes &ensp;@Html.DisplayFor(modelItem => item.Post_Dislike) Dislikes &ensp;
+                    @Html.ActionLink("Edit", "Edit", "Papers", new { id = item.ID }, new { @class = "btn btn-primary" })
+
+                    @Html.ActionLink("Delete", "Delete", "Papers", new { id = item.ID }, new { @class = "btn btn-success" }) &ensp;
+                    
+                    <hr />
+                    @Html.ActionLink("Like", "Like", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp; @Html.ActionLink("DisLike", "DisLike", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp;
+                    @Html.ActionLink("PostComment", "Create", "Comments", new { id = item.ID }, new { @class = "btn btn-light" }) &ensp;
+                    <hr />
+                    @Html.Action("ParComments", "Papers", new { id = item.ID })
+
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
