@@ -16,6 +16,9 @@ papers.
 7- Author can open other authors’ papers and write comments.
 8- Author can like or dislike other authors’ papers.
 
+![Screenshot 2022-07-01 200450](https://user-images.githubusercontent.com/84684863/176948778-cee957b3-88c3-4566-a715-6c1c54af6421.png)
+![Screenshot 2022-07-01 200730](https://user-images.githubusercontent.com/84684863/176948803-3dd98c2e-8c8f-48a6-8e22-6e556a3da744.png)
+
 ![Screenshot 2022-07-01 200531](https://user-images.githubusercontent.com/84684863/176948322-cbe11ba4-4fde-4429-9e7c-673c62298bb6.png)
 ![Screenshot 2022-07-01 200611](https://user-images.githubusercontent.com/84684863/176948359-0240b1d8-b2aa-4297-93a8-f600f0544542.png)
 ![Screenshot 2022-07-01 200638](https://user-images.githubusercontent.com/84684863/176948417-26b90bec-48d6-4307-b508-49f3ebc44ad0.png)
