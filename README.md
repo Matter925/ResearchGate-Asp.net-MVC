@@ -1,5 +1,5 @@
-# ResearchGate-Asp.net-MVC
-ResearchGate-Asp.net-MVC WebSite Used To Publish Researches
+# ResearchGate
+ResearchGate WebSite Used To Publish Researches
 1- Author creates an account.
 2- Author login to his/her account and edit his/her profile (profile image, 
 first name, last name, university, department, email, mobile).
